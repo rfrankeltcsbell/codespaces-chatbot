@@ -1,5 +1,13 @@
 from chatterbot import ChatBot
-talkbot=ChatBot("Chatbot")
+from chatterbot.trainers import ChatterBotCorpusTrainer,ListTrainer
+import nltk 
+nltk.download('punkt_tab')
+
+chatbot = ChatBot("ChatBot")
+trainer= ListTrainer(chatbot)
+trainer.train(["hello world","how can I help you"])
+trainer.train(["What is your Name"])
+trainer.train(["my name is chatbot"])
 
 exit_conditions=("quit")
 while True:
@@ -7,4 +15,4 @@ while True:
     if query in exit_conditions:
         break
     else:
-        print((f"{talkbot.get_response(query)}"))
+        print((f"{chatbot.get_response(query)}"))
