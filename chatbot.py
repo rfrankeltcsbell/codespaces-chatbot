@@ -16,3 +16,8 @@ while True:
         break
     else:
         print((f"{chatbot.get_response(query)}"))
+
+
+#pip install nltk 
+#pip install chatterbot=1.0.4 pytz 
+#pip python3 -m pip install --upgrade pip
